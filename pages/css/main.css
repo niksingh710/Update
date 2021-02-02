@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html ::selection {
+  background: #fea013;
+  color: red;
+}
+
+html body {
+  font-size: 3rem;
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fea012;
+}
+
+html body span {
+  color: #96ecb7;
+}

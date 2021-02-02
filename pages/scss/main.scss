@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+
+  ::selection {
+    background: rgb(254, 160, 18.7);
+    color: red;
+  }
+  body {
+    font-size: 3rem;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254, 160, 18);
+    span {
+      color: #96ecb7;
+    }
+  }
+}
