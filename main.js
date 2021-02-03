@@ -54,7 +54,9 @@ app.on("activate", () => {
   }
 });
 
-ipcMain.on("update", check);
+ipcMain.on("update", () => {
+  check(true);
+});
 
 // // TODO: Not in Production Line
 // try {

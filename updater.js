@@ -7,19 +7,20 @@ autoUpdater.autoDownload = false;
 
 let dp = 0;
 
-exports.check = () => {
+exports.check = (manual = false) => {
   autoUpdater.checkForUpdates();
   autoUpdater.logger.info("Going to prompt");
 
-  autoUpdater.on("update-not-available", () => {
-    dialog.showMessageBox({
-      type: "info",
-      title: "Update Not Here",
-      message: "No New Update is Available",
-      buttons: ["Ok"],
+  if (manual) {
+    autoUpdater.on("update-not-available", () => {
+      dialog.showMessageBox({
+        type: "info",
+        title: "Update Not Here",
+        message: "No New Update is Available",
+        buttons: ["Ok"],
+      });
     });
-  });
-
+  }
   autoUpdater.on("update-available", (updateInfo) => {
     dialog
       .showMessageBox({
