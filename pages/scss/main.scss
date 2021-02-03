@@ -16,11 +16,35 @@ html {
     font-family: sans-serif;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgb(254, 160, 18);
     span {
       color: #96ecb7;
+    }
+
+    button {
+      margin-top: 5rem;
+      border: none;
+      font-size: 2rem;
+      padding: 1rem 4rem;
+      border-radius: 2rem;
+      box-shadow: 0 2rem 4rem rgba(#000, 0.4);
+      transition: 0.3s all ease;
+
+      &:hover {
+        background: #000;
+        color: white;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:active {
+        outline: none;
+        box-shadow: 0 1rem 4rem rgba(#000, 0.4);
+        transform: scale(0.98);
+      }
     }
   }
 }

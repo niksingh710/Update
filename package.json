@@ -8,19 +8,37 @@
     "start": "electron .",
     "build:linux": "electron-builder -l",
     "build:win": "electron-builder -w",
-    "build:lw": "electron-builder -lw"
+    "build:lw": "electron-builder -lw",
+    "publish:lw": "GH_TOKEN=9b66e7de46e7e96f6e9b77fc55aadcdd1e858502 electron-builder -lw -p 'onTagOrDraft'"
   },
   "build": {
     "appId": "com.niksingh710.test",
     "linux": {
-      "target": ["AppImage", "deb", "snap"],
+      "target": [
+        "AppImage",
+        "snap"
+      ],
       "category": "Network",
       "icon": "./build/icon.icns",
-      "executableName": "Update Test"
+      "publish": [
+        "github"
+      ]
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade": "stable",
+      "plugs": [
+        "default"
+      ]
     },
     "win": {
-      "target": ["nsis"],
-      "icon": "./build/icon.png"
+      "target": [
+        "nsis"
+      ],
+      "icon": "./build/icon.png",
+      "publish": [
+        "github"
+      ]
     },
     "nsis": {
       "oneClick": false,
@@ -35,5 +53,10 @@
     "electron-builder": "^22.9.1",
     "electron-reloader": "^1.2.0",
     "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@imjs/electron-differential-updater": "^5.1.4",
+    "electron-log": "^4.3.1",
+    "electron-updater": "^4.3.5"
   }
 }

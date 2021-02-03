@@ -18,6 +18,7 @@ html body {
   font-family: sans-serif;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fea012;
@@ -25,4 +26,29 @@ html body {
 
 html body span {
   color: #96ecb7;
+}
+
+html body button {
+  margin-top: 5rem;
+  border: none;
+  font-size: 2rem;
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.4);
+  transition: 0.3s all ease;
+}
+
+html body button:hover {
+  background: #000;
+  color: white;
+}
+
+html body button:focus {
+  outline: none;
+}
+
+html body button:active {
+  outline: none;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4);
+  transform: scale(0.98);
 }

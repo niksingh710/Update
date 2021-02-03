@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloading</title>
+</head>
+
+<body style="overflow: hidden;">
+    <progress id="progress" style="width:100%;" value="0" max="100"></progress>
+</body>
+
+<script>
+    const {
+        ipcRenderer
+    } = require('electron');
+    setInterval(() => {
+        let progress = ipcRenderer.sendSync('progress-request');
+        console.log(progress);
+        document.getElementById('progress').value = progress;
+    });
+</script>
+
+</html>

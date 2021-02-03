@@ -1,5 +1,5 @@
 const { app, BrowserWindow, Menu, ipcMain } = require("electron");
-
+const { check } = require("./updater");
 let menuTemplate = [
   {
     label: "Tools",
@@ -36,6 +36,10 @@ const createWindow = () => {
 
 app.on("ready", () => {
   createWindow();
+
+  setTimeout(() => {
+    check();
+  }, 2000);
 });
 
 app.on("window-all-closed", () => {
@@ -50,7 +54,9 @@ app.on("activate", () => {
   }
 });
 
-// TODO: Not in Production Line
-try {
-  require("electron-reloader")(module);
-} catch (_) {}
+ipcMain.on("update", check);
+
+// // TODO: Not in Production Line
+// try {
+//   require("electron-reloader")(module);
+// } catch (_) {}
