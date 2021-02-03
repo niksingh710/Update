@@ -9,7 +9,7 @@
     "build:linux": "electron-builder -l",
     "build:win": "electron-builder -w",
     "build:lw": "electron-builder -lw",
-    "publish:lw": "GH_TOKEN=9b66e7de46e7e96f6e9b77fc55aadcdd1e858502 electron-builder -lw -p 'onTagOrDraft'"
+    "publish:lw": "electron-builder -lw -p 'onTagOrDraft'"
   },
   "build": {
     "appId": "com.niksingh710.test",
