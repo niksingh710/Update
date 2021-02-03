@@ -1,6 +1,6 @@
 {
   "name": "updatelearning",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "productName": "Update Test",
   "description": "A simple electron app to learn how to update that.",
   "main": "main.js",
