@@ -1,4 +1,4 @@
-const { autoUpdater } = require("@imjs/electron-differential-updater");
+const { autoUpdater } = require("electron-updater");
 const { dialog, BrowserWindow, ipcMain } = require("electron");
 autoUpdater.logger = require("electron-log");
 autoUpdater.logger.transports.file.level = "verbose";
